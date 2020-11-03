@@ -546,3 +546,7 @@ p {
     font-size: 16px;
     line-height: 32px;
 }
+
+@media (max-width: 1024px) {
+
+}
