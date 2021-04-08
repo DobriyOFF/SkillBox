@@ -1,0 +1,304 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    background: #E5E5E5;
+    color: black;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+button {
+    text-decoration: none;
+    border: none;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+}
+
+html {
+    font-family: 'Montserrat', sans-serif;
+}
+
+h1 {
+    margin: 0;
+}
+
+h2 {
+    margin: 0;
+}
+
+h3 {
+    margin: 0;
+}
+
+p {
+    margin: 0;
+}
+
+.container {
+    width: 1300px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.btn {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    cursor: pointer;
+    text-align: center;
+}
+
+.visibility-hidden {
+    visibility: hidden;
+}
+
+.flex-list {
+    display: flex;
+    margin-top: 20px;
+}
+
+.custom-checkbox {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+}
+
+.flex-checkbox {
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-checkbox-label {
+    margin-top: 20px;
+}
+
+.checkbox {
+    padding: 30px 30px;
+    width: 176px;
+    height: 336px;
+    background: #FFFFFF;
+    border-radius: 10px;
+}
+
+h3 {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+label {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+}
+
+.custom-checkbox+label {
+    display: inline-flex;
+    align-items: center;
+    user-select: none;
+}
+.custom-checkbox+label::before {
+    content: '';
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    flex-shrink: 0;
+    flex-grow: 0;
+    border: 1px solid #adb5bd;
+    border-radius: 0.25em;
+    margin-right: 0.5em;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 50% 50%;
+}
+
+.custom-checkbox:checked+label::before {
+    border-color: #CCB26E;
+    background-color: transparent;
+    background-image: url("../img/Rectangle_99.png");
+}
+
+/* стили при наведении курсора на checkbox */
+.custom-checkbox:not(:disabled):not(:checked)+label:hover::before {
+    border-color: #CCB26E;
+}
+  /* стили для активного состояния чекбокса (при нажатии на него) */
+.custom-checkbox:not(:disabled):active+label::before {
+    background-color: #CCB26E;
+    border-color: #CCB26E;
+}
+  /* стили для чекбокса, находящегося в фокусе */
+.custom-checkbox:focus+label::before {
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+  /* стили для чекбокса, находящегося в фокусе и не находящегося в состоянии checked */
+.custom-checkbox:focus:not(:checked)+label::before {
+    border-color: #CCB26E;
+}
+  /* стили для чекбокса, находящегося в состоянии disabled */
+.custom-checkbox:disabled+label::before {
+    background-color: #e9ecef;
+}
+
+/*the container must be positioned relative:*/
+.custom-select {
+  position: relative;
+  margin-left: 30px;
+  font-family: Arial;
+  min-width: 176px;
+  height: 37px;
+  border: 1px solid #CCB26E;
+  border-radius: 10px;
+}
+
+.custom-select select {
+  display: none; /*hide original SELECT element:*/
+}
+
+.select-selected {
+  background-color: #FFFFFF;
+  
+}
+
+/*style the arrow inside the select element:*/
+.select-selected:after {
+  position: absolute;
+  content: "";
+  top: 14px;
+  right: 10px;
+  width: 0;
+  height: 0;
+  border: 6px solid transparent;
+  border-color: #CCB26E transparent transparent transparent;
+}
+
+/*point the arrow upwards when the select box is open (active):*/
+.select-selected.select-arrow-active:after {
+  border-color: transparent transparent #CCB26E transparent;
+  top: 7px;
+}
+
+/*Подсветка для айтемов:*/
+.select-items div,.select-selected {
+  color: black;
+  padding: 9px 66px 6px 15px; 
+  border: 1px solid transparent;
+  border-radius: 10px;
+  cursor: pointer;
+  user-select: none;
+}
+
+/*style items (options):*/
+.select-items {
+  position: absolute;
+  background-color: #FFFFFF;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 99;
+  border-radius: 10px;
+  border: 1px solid #CCB26E;
+}
+
+/*hide the items when the select box is closed:*/
+.select-hide {
+  display: none;
+}
+
+.select-items div:hover, .same-as-selected {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.map-yandex {
+    margin-left: 58px;
+    width: 600px; height: 400px;
+    filter: grayscale(1);
+}
+
+.text-scrool {
+    margin-left: 58px;
+    width: 399px;
+    height: 310px;
+    background-color: #FFFFFF;
+    color: black;
+}
+
+.simplebar-content-wrapper {
+    padding-left: 29px;
+    padding-top: 20px;
+    padding-right: 30px;
+    overflow: auto;
+}
+
+.simplebar-scrollbar:before {
+    background: #CCB26E;
+    border-radius: 5px;
+}
+
+.form {
+    display: flex;
+    margin-top: 50px;
+    flex-direction: column;
+    height: 410px;
+    width: 440px;
+    background: #000000;
+    opacity: 0.8;
+    border-radius: 10px;
+}
+
+.form-title {
+    margin-top: 21px;
+    margin-left: 50px;
+    font-size: 12px;
+    color: #FF5C00;
+}
+
+.form-item {
+    margin-top: 5px;
+    margin-left: 30px;
+    width: 380px;
+    height: 60px;
+    background: #FFFFFF;
+    border: 1px solid #FF5C00;
+    border-radius: 10px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    color: #999999;
+}
+
+.btn {
+    margin-top: 30px;
+    margin-left: 30px;
+    padding: 18px 53px;
+    width: 192px;
+    height: 60px;
+    background: #FF5C00;
+    color: #FFFFFF;
+    border-radius: 10px;
+    align-items: center;
+}
+
+.js-validate-error-label {
+    margin-left: 38px;
+    font-size: 12px;
+    color: #FF5C00 !important;
+}
+
+.flex {
+    display: flex;
+    margin-top: 24px;
+    flex-direction: column-reverse;
+}

@@ -1,0 +1,137 @@
+<header class="header">
+  <div class="header-inner row flex-between flex-center-sm flex-middle ">
+    <div class="left-blocks cell-">
+      <div class="left-blocks-inner row flex-middle">
+        <div class="logotype-wrapper cell-4 cell-7-md cell-12-sm ">
+          <div class="logotype text-center-sm">
+            {% assign logotype_image = 'logotype.jpg' | asset_url_if_exists %}
+            <a title="{{ account.title }}" href="/" class="logotype-link">
+              {% if settings.logotype_type == 'image' and logotype_image %}
+                <img src="{{ logotype_image }}" class="logotype-image" alt="{{ account.title }}" title="{{ account.title }}" />
+              {% else %}
+                <span class="logotype-text">{{ account.title }}</span>
+              {% endif %}
+            </a>
+          </div>
+        </div>
+        {% if settings.phone == 'hidden' and settings.email == 'hidden'  %}
+            {% assign hidden_block = 'hidden' %}
+            {% assign cell_block_info = 'cell-7' %}
+        {% else %}
+            {% assign cell_block_info = 'cell-4' %}
+        {% endif %}
+
+        <div class="header-block js-contacts-header cell-4 hidden-md {{ hidden_block }}">
+          <div class="phone text-left text-center-sm hidden-md">
+            {% case settings.phone %}
+              {% when 'from_settings' %}
+                  <a href="tel:{{ account.phone | strip_html }}" class="contact-link tel"> {{ account.phone | strip_html | editable }}</a>
+              {% when 'edited_block' %}
+                <span class="editor">
+                  {{ blocks.phone.content | editable }}
+                </span>
+            {% endcase %}
+          </div>
+
+          <div class="email text-left flex-center-xs hidden-md">
+            {% case settings.email %}
+              {% when 'from_settings' %}
+                <a href="mailto:{{ account.email | strip_html }}" class="contact-link email"> {{ account.email | strip_html | editable }}</a>
+              {% when 'edited_block' %}
+                <span class="editor">
+                  {{ blocks.email.content | editable }}
+                </span>
+            {% endcase %}
+          </div>
+        </div>
+        {% if blocks.header_info.content %}
+          <div class="header-info header-block hidden-sm {{ cell_block_info }}">
+            <div class="editor">
+              {{ blocks.header_info.content | editable }}
+            </div>
+          </div>
+        {% endif %}
+
+      </div>
+    </div>
+<div class="left-header-block cell- hidden-sm">
+
+  <div class="header-block header-compare">
+
+    {% unless settings.product_compare_hide %}
+      <div class="compares-widget  ">
+        <a href="/compares" class="compares-widget-link" title="{{ messages.compare_description }}">
+
+
+          <span class="compare-widget-caption ">
+            <span class="compares-widget-count js-compares-widget-count"></span>
+          </span>
+
+        </a>
+      </div>
+    {% endunless %}
+
+    <div class="shopcart-widget-wrapper  hidden-sm">
+      <div class="shopcart-widget in-header js-widget-dropdown">
+        <a href="{{ cart_url }} " title="{{ messages.cart_title }}" class="shopcart-widget-link ">
+          <span class="shopcart-widget-icon">
+              <span class="shopcart-widget-count js-shopcart-widget-count"></span>
+          </span>
+          <span class="shopcart-widget-data">
+            <span class="shopcart-widget-caption">
+            {{ messages.cart_title }}:
+            </span>
+
+            <span class="shopcart-widget-amount js-shopcart-widget-amount hidden-md"></span>
+          </span>
+        </a>
+
+          <div class="cart-widget-dropdown hidden hidden-sm">
+            <form action="{{ cart_items }}" method="post" class="shopping-cart js-cart-widget-empty" >
+              <div class="cart-body">
+                <div class="cart-list js-cart-dropdown">
+
+                </div>
+              </div>
+
+              <div class="cart-footer row flex-between ">
+
+                <div class=" cart-block-checkout is-cart-dropdown">
+                  <div class="cart-total js-shopcart-total-summ"></div>
+
+                  <a class="cart-checkout button is-primary is-cart-dropdown" href="/cart_items">
+                    <span class="button-text">
+                      {{ messages.button_widget_cart }}
+                    </span>
+                  </a>
+                </div>
+
+              </div>
+              <input type="hidden" name="_method" value="put">
+              <input type="hidden" name="make_order" value="">
+              <input type="hidden" name="lang" value="{{ language.locale }}"/>
+
+            </form>
+
+
+            <div class="notice notice-info text-center js-cart-empty ">
+              {{ messages.cart_is_empty }}
+            </div>
+
+            {% assign cart_empty_class = null %}
+          </div>
+        </div>
+    </div>
+  </div>
+  </div>
+
+
+  </div>
+
+  <div class="main-menu-wrapper hidden-sm">
+      {% include "menu", source_type: 'menu', source_handle: 'main-menu', menu_class: 'main-menu' %}
+        {% include "search_widget", widget_class: 'in-header ' %}
+  </div>
+</header>
+
+{% assign hidden_block =  null %}

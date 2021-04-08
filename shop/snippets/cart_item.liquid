@@ -1,0 +1,48 @@
+{% assign is_cover = settings.cards_crop_off | default: 'is-cover' | replace: '1', '' %}
+<div class="cart-item {{ cart_class }}" data-product-id="{{ item.product.id }}" data-item-id="{{ item.id }}">
+  <div class="cart-item-inner item {{ cart_class }}">
+
+    <div class="item-image-wrapper {{ cart_class }}">
+      <div class="item-image-inner">
+        <a href="{{ item.product.url }}" title="{{ item.title }}" class="item-image-link image-container is-square {{ is_cover }}">
+          <img title="{{ item.title }}" alt="{{ item.title }}" src="{{ item.image.large_url }}" class="item-image">
+        </a>
+      </div>
+    </div>
+
+    <div class="item-content">
+      <div class="item-caption">
+        <a href="{{ item.product.url }}" class="item-title">
+          {{ item.title }}
+        </a>
+        {% if item.sku %}
+        <div class="item-sku">
+          {{ messages.label_article }} : {{ item.sku }}
+        </div>
+        {% endif %}
+      </div>
+
+      <div class="item-prices is-total-price js-item-price">
+        {{ item.sale_price | money }}
+      </div>
+
+      <div class="item-counter {{ cart_class }}">
+        {% include "product_counter", is_item: true, start_quantity: item.quantity, variant_id: item.id %}
+      </div>
+
+      <div class="item-prices is-total-price js-item-total-price">
+        {{ item.total_price | money }}
+      </div>
+
+      <div class="item-delete">
+        <button type="submit" class="button is-item-delete is-transparent" data-item-delete="{{ item.id }}">
+
+        </button>
+        </div>
+
+    </div>
+  </div>
+
+</div><!-- /.cart-item -->
+
+{% assign is_cover = null %}

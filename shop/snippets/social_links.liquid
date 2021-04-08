@@ -1,0 +1,41 @@
+{% assign social_groups = settings.vk | append: settings.twitter | append: settings.facebook | append: settings.instagram | append: settings.odnoklassniki | append: settings.youtube %}
+
+{% if social_groups.size > 0 %}
+  <ul class="social-menu">
+    {% for i in (1..6) %}
+      {% if i == 1 %}
+        {% assign soc_link = settings.vk %}
+        {% assign soc_icon = 'vk' %}
+      {% endif %}
+      {% if i == 2 %}
+        {% assign soc_link = settings.twitter %}
+        {% assign soc_icon = 'twitter' %}
+      {% endif %}
+      {% if i == 3 %}
+        {% assign soc_link = settings.facebook %}
+        {% assign soc_icon = 'facebook' %}
+      {% endif %}
+      {% if i == 4 %}
+        {% assign soc_link = settings.instagram %}
+        {% assign soc_icon = 'instagram' %}
+      {% endif %}
+      {% if i == 5 %}
+        {% assign soc_link = settings.odnoklassniki %}
+        {% assign soc_icon = 'odnoklassniki' %}
+      {% endif %}
+      {% if i == 6 %}
+        {% assign soc_link = settings.youtube %}
+        {% assign soc_icon = 'youtube' %}
+      {% endif %}
+
+      {% if soc_link.size > 0 %}
+        <li class="social-menu-item">
+          <a target="blank" title='{{ soc_icon }}' href="{{ soc_link }}" class="social-menu-link">
+            <div class="fa fa-{{ soc_icon }} fa-lg"></div>
+          </a>
+        </li>
+      {% endif %}
+
+    {% endfor %}
+  </ul>
+{% endif %}

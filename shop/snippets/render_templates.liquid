@@ -1,0 +1,96 @@
+{% assign is_cover = settings.cards_crop_off | default: 'is-cover' | replace: '1', '' %}
+
+ <script type="text/template" hidden data-template-id="cart-widget-dropdown">
+  <% _.forEach( obj.order_lines, function (item) { %>
+    <div class="cart-item is-cart-dropdown" data-product-id="<%= item.product.id %>" data-item-id="<%= item.id %>">
+      <div class="cart-item-inner item is-cart-dropdown">
+
+        <div class="item-image-wrapper is-cart-dropdown">
+          <div class="item-image-inner">
+          <% if (_.size(item.images) > 0) { %>
+            <a href="<%= item.product.url %>" title="<%= item.title %>" class="item-image-link image-container is-square  {{ is_cover }}  " data-info=" <%= item.images %>">
+
+                  <img title="<%= item.title %>" alt="<%= item.title %>" src="<%= item.first_image.thumb_url %>" class="item-image">
+            </a>
+            <% } %>
+          </div>
+        </div>
+
+        <div class="item-content">
+          <div class="item-caption">
+            <a href="<%= item.product.url %>" class="item-title">
+              <%= item.title %>
+            </a>
+          </div>
+    <div class="item-numbers">
+      <div class="item-prices ">
+        <%= item.quantity %> x
+      </div>
+
+      <div class="item-prices is-total-price js-item-total-price">
+        <%= item.total_price %>
+      </div>
+    </div>
+
+      <div class="item-delete">
+        <button type="submit" class="button is-item-delete is-transparent" data-item-delete="<%= item.id %>">
+
+      </button>
+    </div>
+
+        </div>
+      </div>
+
+    </div>
+
+  <% }); %>
+</script>
+
+<script type="text/template" hidden data-template-id="view_products">
+  <div class="views-tovar-heading">
+    {{ messages.view_products }}
+  </div>
+  <div class="product-slider is-reviews" data-slider="reviews-products">
+
+    <div  class="product-slider-controls" data-slider-controls>
+      <button class="product-slider-prev reviews-products-button" data-slider-prev></button>
+      <button class="product-slider-next reviews-products-button" data-slider-next></button>
+    </div>
+  <% _.forEach( obj, function(item, key) { %>
+
+<div class="reviews-products" data-slider-slide>
+    <div class="product-card " >
+      <div class="product-card-inner">
+
+        <a href="<%= item.url %> "class="product-card-photo image-container is-square {{ is_cover }}" title="<%= item.title %>">
+            <img src="<%= item.first_image.large_url %>"   alt="<%= item.title %>" class="product-card-image">
+        </a>
+
+
+
+        <div class="product-card-price product-prices in-card">
+          <div class="price in-card">
+              <%= Shop.money.format(item.price_min) %>
+          </div>
+        </div>
+
+      <form class="product-cart-control" method="post">
+
+          <div class="more-info">
+            <a class="button button-buy is-primary " href="<%= item.url %>" title='<%= item.title %>'>
+              <span class="button-text">{{ messages.button_more }}</span>
+            </a>
+          </div>
+
+        </form><!-- /.product-control -->
+        <a  href="<%= item.url %>" class="product-link">
+        <%= item.title %>
+        </a>
+      </div>
+    </div>
+  </div>
+  <% }); %>
+</div>
+</script>
+
+{% assign is_cover = null %}

@@ -1,0 +1,86 @@
+{% include "breadcrumb", home_title: 'Главная' %}
+{% include "page_header" %}
+
+{% if settings.category_description_position == 'before_products'  and current_page == null %}
+  <div class="collection-mix-description">
+    {% unless  settings.category_image_hidden == '1' %}
+      {% unless collection.image.original_url contains 'no_image' %}
+        <div class="collection-image image-container">
+          <img src="{{ collection.image.original_url }}" alt="{{ collection.title }}" title="{{ collection.title }}"/>
+        </div>
+      {% endunless %}
+    {% endunless %}
+    {% if filter.description %}
+      <div class="collection-description at-top editor">
+        {{ filter.description | editable }}
+      </div>
+    {% elsif collection.description %}
+      <div class="collection-description at-top editor">
+        {{ collection.description | editable }}
+      </div>
+    {% endif %}
+  </div>
+{% endif %}
+{% assign display_filter = false  %}
+{% paginate products by 12 %}
+{% include "collection_filter_check" %}
+{% assign hide_class = display_filter | default: "hidden" | replace: 'true','' %}
+
+
+
+  {% if products.size > 0 %}
+    <div class="toolbar collection-toolbar at-top">
+      <div class="toolbar-inner is-between">
+
+          <div class="filter-collapse {{ hide_class }}">
+            <button type="button" class="filter-panel-open-sidebar button is-primary js-open-filter" data-filter-caption="{{ messages.filter_heading }}">
+              <span class="filter-collapse__label">
+                {{ messages.filter_heading }}</span>
+            </button>
+
+          </div>
+
+        {% if products.size > 1 %}
+          <div class="collection-order-wrapper flex-end">
+            {% include "collection_order", hide_page_size: true %}
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  {% endif %}
+
+  {% include "collection_products" %}
+
+  {% if products.size > 1 %}
+    <div class="toolbar collection-toolbar at-bottom">
+      <div class="toolbar-inner">
+        <div class="pagination-wrapper">
+          {% include "pagination" %}
+        </div>
+      </div>
+    </div>
+  {% endif %}
+
+{% endpaginate %}
+
+{% if settings.category_description_position == 'after_products'  and current_page == null %}
+  <div class="collection-mix-description">
+    {% unless  settings.category_image_hidden == '1' %}
+      {% unless collection.image.original_url contains 'no_image' %}
+        <div class="collection-image image-container">
+          <img src="{{ collection.image.original_url }}" alt="{{ collection.title }}" title="{{ collection.title }}"/>
+        </div>
+      {% endunless %}
+    {% endunless %}
+    {% if filter.description %}
+      <div class="collection-description at-bottom editor">
+        {{ filter.description | editable }}
+      </div>
+    {% elsif collection.description %}
+      <div class="collection-description at-bottom editor">
+        {{ collection.description | editable }}
+      </div>
+    {% endif %}
+  </div>
+{% endif %}
+

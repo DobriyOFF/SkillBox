@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/simplebar@latest/dist/simplebar.css"/>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" type="text/css" href="css/normalize.css">
+  <link rel="stylesheet" type="text/css" href="css/styles.css">
+
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script src="https://unpkg.com/simplebar@latest/dist/simplebar.min.js"></script>
+  <script src="https://api-maps.yandex.ru/2.1/?apikey=ваш API-ключ&lang=ru_RU" type="text/javascript"></script>
+  <script src="./src/jquery.customSelect.min.js"></script>
+  <script src="./src/inputmask.min.js"></script>
+  <script src="./src/just-validate.min.js"></script>
+  <script src="./src/index.js"></script>
+  <title>Document</title>
+</head>
+<body>
+  <div class="container">
+    <div class="flex-list">
+      <div class="checkbox">
+        <h3>Категории</h3>
+        <div class="flex-checkbox">
+          <div class="flex-checkbox-label">
+            <input type="checkbox" class="custom-checkbox" id="dinosaurs" name="dinosaurs" >
+            <label for="dinosaurs">Динозавры</label>
+          </div>
+          <div class="flex-checkbox-label">
+            <input type="checkbox" class="custom-checkbox" id="bears" name="bears" >
+            <label for="bears">Медведи</label>
+          </div>
+          <div class="flex-checkbox-label">
+            <input type="checkbox" class="custom-checkbox" id="roe_deer" name="roe_deer" >
+            <label for="roe_deer">Косули</label>
+          </div>
+          <div class="flex-checkbox-label">
+            <input type="checkbox" class="custom-checkbox" id="foxes" name="foxes" >
+            <label for="foxes">Лисы</label>
+          </div>
+          <div class="flex-checkbox-label">
+            <input type="checkbox" class="custom-checkbox" id="wolves" name="wolves" >
+            <label for="wolves">Волки</label>
+          </div>
+          <div class="flex-checkbox-label">
+            <input type="checkbox" class="custom-checkbox" id="deer_moose" name="deer_moose" >
+            <label for="deer_moose">Олени и лоси</label>   
+          </div>
+        </div>
+      </div>
+      <div class="custom-select">
+        <select>
+          <option class="custom-select-item" value="0">Материал</option>
+          <option class="custom-select-item" value="1">Древесина</option>
+          <option class="custom-select-item" value="2">Металл</option>
+          <option class="custom-select-item" value="3">Камень</option>
+          <option class="custom-select-item" value="4">Пластик</option>
+          <option class="custom-select-item" value="5">Композитный</option>
+          <option class="custom-select-item" value="6">Гипс</option>
+        </select>
+      </div>
+      <div id="map" class="map-yandex"></div>
+      <div class="text-scrool" data-simplebar>
+        Сложно сказать, почему многие известные личности представлены в исключительно положительном свете. Лишь активно развивающиеся страны третьего мира будут объективно рассмотрены соответствующими инстанциями. Мы вынуждены отталкиваться от того, что высокотехнологичная концепция общественного уклада представляет собой интересный эксперимент проверки глубокомысленных рассуждений. Имеется спорная точка зрения, гласящая примерно следующее: непосредственные участники технического прогресса освещают чрезвычайно интересные особенности картины в целом, однако конкретные выводы, разумеется, обнародованы. Значимость этих проблем настолько очевидна, что социально-экономическое развитие, а также свежий взгляд на привычные вещи - безусловно открывает новые горизонты для первоочередных требований.
+      </div>
+      
+    </div>
+    <form action="" class="form">
+      <div class="flex">
+        <!-- <span class="form-title">Как вас зовут?</span> -->
+        <input
+        name="name"
+        type="text"
+        placeholder="Имя*"
+        data-validate-field="name"
+        class="form-item"
+        >
+        <div class="js-validate-error-label">Как вас зовут?</div>
+      </div>
+      <div class="flex">
+        <!-- <span class="form-title">Укажите ваш телефон</span> -->
+        <input
+        name="tel"
+        type="tel"
+        placeholder="Телефон*"
+        data-validate-field="tel"
+        class="form-item"
+        >
+        <div class="js-validate-error-label">Укажите ваш телефон</div>
+      </div>
+      <div class="flex">
+      <!-- <span class="form-title">Укажите ваш e-mail</span> -->
+        <input
+        name="email"
+        type="email"
+        placeholder="E-mail*"
+        data-validate-field="email"
+        class="form-item"
+        >
+        <div class="js-validate-error-label">Укажите ваш e-mail</div>
+      </div>
+      <button class="btn">
+        Заказать
+      </button>
+    </form>
+  </div>
+</body>
+</html>

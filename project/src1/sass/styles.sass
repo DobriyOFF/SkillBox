@@ -1,0 +1,809 @@
+@font-face
+  font-family: 'Open Sans'
+  font-style: normal
+  font-weight: 300
+  src: local('')
+  src: url('../fonts/open-sans-v18-latin_cyrillic-300.woff2') format('woff2')
+  src: url('../fonts/open-sans-v18-latin_cyrillic-300.woff') format('woff')
+
+@font-face 
+  font-family: 'Open Sans'
+  font-style: normal
+  font-weight: 400
+  src: local('')
+  src: url('../fonts/open-sans-v18-latin_cyrillic-regular.woff2') format('woff2')
+  src: url('../fonts/open-sans-v18-latin_cyrillic-regular.woff') format('woff') 
+
+@font-face 
+  font-family: 'Open Sans'
+  font-style: normal
+  font-weight: 600
+  src: local('')
+  src: url('../fonts/open-sans-v18-latin_cyrillic-600.woff2') format('woff2') 
+  src: url('../fonts/open-sans-v18-latin_cyrillic-600.woff') format('woff') 
+
+@font-face 
+  font-family: 'Open Sans'
+  font-style: normal
+  font-weight: 700
+  src: local('')
+  src: url('../fonts/open-sans-v18-latin_cyrillic-700.woff2') format('woff2') 
+  src: url('../fonts/open-sans-v18-latin_cyrillic-700.woff') format('woff') 
+
+@font-face 
+  font-family: 'Open Sans'
+  font-style: normal
+  font-weight: 800
+  src: local('')
+  src: url('../fonts/open-sans-v18-latin-800.woff2') format('woff2') 
+  src: url('../fonts/open-sans-v18-latin-800.woff') format('woff') 
+
+$black-color: #333333
+$orange-color: #FF9900
+$grey-color: #CACACA
+$darkgrey-color: #D2D2D2
+$white-color: #FFFFFF
+$black-footer-color: #222222
+$swiper-theme-color: #FFFFFF
+$purple-color: #9D5CD0
+$purple-color-hover: #7943A4
+
+
+
+* 
+  box-sizing: border-box
+
+body 
+  background: $white-color
+
+
+a 
+  text-decoration: none
+  color: black
+
+
+button 
+  text-decoration: none
+  border: none
+
+
+ul 
+  margin: 0
+  padding: 0
+  list-style: none
+
+
+img 
+  max-width: 100%
+
+
+html 
+  font:
+    family: 'Open Sans', sans-serif
+    style: normal
+    weight: 400
+
+
+h1, h2, h3, p 
+  margin: 0
+
+.container 
+  width: 1603px
+  margin:
+    right: auto
+    left: auto
+
+
+.btn 
+  display: flex
+  flex-direction: row
+  align-items: flex-start
+  cursor: pointer
+  text-align: center
+
+
+.visibility-hidden 
+  visibility: hidden
+
+input[type='search']::-webkit-input-placeholder
+  color: $white-color
+input[type='search']::-moz-placeholder
+  color: $white-color
+
+.purple
+  color: $purple-color
+
+.active
+  color: $purple-color
+
+/* HEADER */
+.header 
+  padding:
+    top: 30px
+    bottom: 30px
+  height: 100px
+  background: #000000
+  &-content 
+    display: flex
+    align-items: center
+
+.tips img
+  transform: translateY(3px)
+  width: 16px
+  height: 16px
+
+.tippy-box[data-theme~='tomato'] 
+  background-color: $grey-color
+  color: $white-color
+
+
+
+.nav 
+  margin-left: 179px
+  &-list 
+    display: flex
+  &-item:not(:last-child) 
+    margin-right: 62px
+  &-item-link 
+    font:
+      weight: 600
+      size: 18px
+    color: $white-color
+  &-item-link:hover
+    color: $purple-color
+
+
+.login 
+  margin-left: 283px
+  padding-left: 20px
+  width: 62px
+  color: $white-color
+  font:
+    weight: 400
+    size: 18px
+  background:
+    image: url(../img/login.png)
+    repeat: no-repeat
+    position: left center
+
+.login:hover
+  color: $purple-color
+  background:
+    image: url(../img/login_hover.png)
+
+/* HERO */
+.hero
+  height: 700px
+  background-image: url(../img/castle.jpg)
+  &-back
+    height: 70px
+    background: rgba(0, 0, 0, 0.4)
+  &-header 
+    display: flex
+  &-list 
+    display: flex
+    padding-top: 25px
+  &-item
+    height: 19px
+  &-item:not(:last-child) 
+    margin-right: 111px
+  &-item-link 
+    color: $white-color
+    font:
+      weight: 400
+      size: 18px
+  &-item-link:hover
+    color: $purple-color
+  &-search
+    display: flex
+    margin-left: 342px
+    padding-top: 20px
+    width: 251.1px
+  &-search-input
+    margin-left: 9px
+    font-style: normal
+    font-weight: regular
+    font-size: 18px
+    color: $white-color
+    width: 218px
+    background: transparent
+    border: 0
+    border-bottom: 1px solid rgba(255, 255, 255, 0.85)
+  &-search-input:hover
+    border-bottom: 1px solid $purple-color
+  &-search-button
+    margin-top: 8px
+    width: 23.3px
+    height: 21.62px
+    background: transparent
+      image: url(../img/search_icon.svg)
+      repeat: no-repeat
+  &-search-button:hover
+    background: 
+      image: url(../img/search_icon_hover.svg)
+
+.dropbtn 
+  padding: 0
+  background-color: transparent
+  color: white
+  font-size: 18px
+  border: none
+  cursor: pointer
+
+.dropdown 
+  position: relative
+  display: inline-block
+  &-content 
+    display: none
+    position: absolute
+    margin-top: 10px
+    background-color: #f9f9f9
+    min-width: 160px
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2)
+    z-index: 1
+
+.dropdown-content a
+  color: black
+  padding: 12px 16px
+  text-decoration: none
+  display: block
+
+.dropdown-content a:hover 
+  background-color: #f1f1f1
+
+.dropdown:hover .dropdown-content 
+  display: block
+
+.dropdown:hover .dropbtn 
+  background-color: transparent
+
+.c-hamburger span 
+  display: block
+  margin-left: 8px
+  position: absolute
+  top: 0px
+  left: 10px
+  right: 0px
+  height: 0px
+  background: white
+  transform: rotate(-270deg)
+  width: 7px
+  height: 6px
+
+
+.hero-item-link:hover .c-hamburger span
+  display: block
+  position: absolute
+  top: 0px
+  left: 10px
+  right: 0px
+  height: 0px
+  background: transparent
+  transform: rotate(-90deg)
+  width: 7px
+  height: 6px
+
+.c-hamburger span::before,
+.c-hamburger span::after 
+  position: absolute
+  display: block
+  left: 0
+  width: 100%
+  height: 2px
+  background-color: white
+  content: ""
+  bottom: 0
+  transform: rotate(-45deg)
+  transition-delay: 0s, 0.3s
+
+
+.c-hamburger 
+  display: inline
+  position: relative
+  overflow: hidden
+  margin: 0
+  padding: 0
+  top: -7px
+  left: -12px
+  width: 1200px
+  height: 20px
+  font-size: 0
+  text-indent: -9999px
+  appearance: none
+  box-shadow: none
+  border-radius: none
+  border: none
+  cursor: pointer
+  transition: background 0.3s
+
+ 
+.c-hamburger--htx 
+  background-color: transparent
+
+ 
+.c-hamburger--htx span 
+  background: transparent
+
+ 
+.c-hamburger--htx span::before 
+  top: 0
+  transform: rotate(45deg)
+  transition-delay: 0s, 0.3s
+
+ 
+.c-hamburger--htx span::after 
+  bottom: 0
+  transform: rotate(-45deg)
+  transition-delay: 0s, 0.3s
+
+.hero-main 
+  margin-top: 63px
+  &-title
+    width: 597px
+    color: $white-color
+    line-height: 90px
+    font:
+      style: normal
+      weight: bold
+      size: 72px
+  &-description
+    margin-top: 13px
+    width: 579px
+    color: $white-color
+    line-height: 30px
+    font:
+      style: normal
+      weight: 500
+      size: 20px
+  &-button
+    margin-top: 92px
+    padding: 22.5px 35px 22.5px 35px
+    width: 314px
+    color: $white-color
+    font:
+      style: normal
+      weight: 600
+      size: 18px
+    background: #9D5CD0
+    border: 3px solid #9D5CD0
+    border-radius: 100px
+  &-button:hover
+    opacity: 88%
+    border: 3px solid #D1A9F0
+
+// ABOUT US
+.about
+  margin-top: 80px
+  &-title
+    font:
+      style: normal
+      weight: normal
+      size: 48px
+    color: $black-color
+  &-description
+    margin-top: 30px
+    width: 1080px
+    line-height: 32px
+    font:
+      style: normal
+      weight: 500
+      size: 16px
+    color: $black-color
+
+// Gallery
+.gallery
+  margin-top: 68px
+  height: 995px
+  background-image: url(../img/gallery_back.jpg)
+  &-flex
+    display: flex
+  &-filter
+    margin-top: 80px
+    width: 401px
+  &-filter-title
+    font:
+      style: normal
+      weight: 500
+      size: 48px
+    color: $white-color
+  &-filter-description
+    margin-top: 30px
+    font:
+      style: normal
+      weight: 600
+      size: 16px
+    color: $white-color
+  &-filter-subscribe
+    margin-top: 540px
+    font:
+      style: normal
+      weight: 600
+      size: 16px
+    line-height: 32px
+    color: $white-color
+  &-filter-checkbox
+    margin-top: 20px
+  &-photo_
+    margin-top: 105px
+    margin-left: 50px
+  &-btn-prev, &-btn-next
+    width: 46px
+    height: 30px
+    background: #666666
+    border-radius: 50%
+    color: white
+  &-photo
+    margin-top: 30px
+    width: 1150px
+    &-scroll-img
+      width: 350px
+      height: 350px
+  &-number
+    position: absolute
+    margin-left: 650px
+    margin-bottom: 39px
+    width: 50px
+    color: white
+  &-col
+    position: relative
+    text-align: center
+    bottom: -5px
+    color: white
+    font-style: normal
+    font-weight: 500
+    font-size: 18px
+
+.swiper
+  &-container 
+    width: 1150px
+    height: 750px
+    margin-left: auto
+    margin-right: auto
+  &-slide
+    margin-bottom: 10px
+    margin-right: 50px !important
+    width: 350px !important
+    background: #fff
+    height: 350px
+    &-active
+      height: 350px
+  &-navigation
+    display: flex
+    width: 130px
+    justify-content: space-between
+
+
+.catalog 
+  margin-top: 80px
+  &-name
+    display: flex
+    height: 66px
+    align-items: center
+    &-title
+      margin-right: 30px
+      font:
+        style: normal
+        weight: 500
+        size: 48px
+      color: $black-color
+    &-img
+      margin-right: 30px
+      padding: 10px
+      width: 66px
+      height: 66px
+    &-img:hover
+      padding: 10px
+      width: 66px
+      height: 66px
+      border: 2px solid #9D5CD0
+        radius: 50%
+    &-description
+      margin-top: 14px
+      width: 1080px
+      font:
+        style: normal
+        weight: 500
+        size: 16px
+      line-height: 32px
+      color: $black-color
+  &-author
+    display: flex
+    margin-top: 36px
+
+.biography
+  width: 750px
+  &-img
+    width: 750px
+    height: 470px
+  &-title
+    margin-top: 30px
+    margin-bottom: 15px
+    font:
+      weight: 600
+      size: 24px
+    color: $black-color
+  &-date
+    font:
+      weight: 400
+      size: 12px
+    color: $darkgrey-color
+  &-description
+    margin-top: 5px
+    font:
+      weight: 400
+      size: 16px
+    color: $black-color
+    line-height: 32px
+
+.event
+  margin-left: 50px
+  width: 800px
+  &-item
+    display: flex
+    justify-content: space-between
+    align-items: center
+    height: 113px
+    border-top: 2px solid $grey-color
+    &-title
+      font:
+        weight: 600
+        size: 24px
+    &-btn
+      width: 50px
+      height: 50px
+      background: url(../img/arrow_bottom.svg)
+      border-radius: 50%
+    &-href:hover
+      color: $purple-color
+
+
+.acc
+  &-head 
+    background: #fff
+    cursor: pointer
+  &-body
+    display: none
+    margin-bottom: 5px
+    font:
+      weight: normal
+      size: 16px
+    line-height: 32px
+    border:
+      top: 2px solid $purple-color
+      bottom: 2px solid $purple-color
+    &-flex
+      display: flex
+      margin:
+        top: 26px
+        bottom: 38px
+    &-left
+      margin-right: 50px
+      width: 208px
+      height: 278px
+    &-center
+      margin-right: 50px
+      width: 208px
+      height: 278px
+    &-right
+      width: 208px
+      height: 278px
+
+.news
+  margin-top: 80px
+  &-title
+    font:
+      weight: 500
+      size: 48px
+  &-list
+    display: flex
+    justify-content: space-between
+    margin-top: 30px
+  &-item
+    display: flex
+    flex-direction: column
+    width: 500px
+    height: 700px
+    &-img
+      background-image: url(../img/news_item.jpg)
+      width: 500px
+      height: 300px
+    &-description
+      padding:
+        top: 13px
+        right: 19px
+      font:
+        weight: 600
+        size: 12px
+      line-height: 16px
+      text-align: right
+      color: #999999
+      border:
+        left: 1px solid $grey-color
+        right: 1px solid $grey-color
+    &-section
+      display: flex
+      flex-direction: column
+      padding:
+        left: 50px
+        right: 50px
+      border:
+        left: 1px solid $grey-color
+        right: 1px solid $grey-color
+        bottom: 1px solid $grey-color
+      &-title
+        font:
+          weight: 600
+          size: 24px
+      &-description
+        margin-top: 10px
+        font:
+          weight: 500
+          size: 16px
+        line-height: 32px
+        color: $black-color
+      &-btn
+        margin-top: 50px
+        margin-bottom: 45px
+        padding-bottom: 5px
+        width: 87px
+        font:
+          size: 16px
+          weight: 500
+        border-bottom: 1px solid $purple-color
+      &-btn:hover
+        color: $purple-color-hover 
+        border-bottom: 1px solid $purple-color-hover
+  &-form
+    display: flex
+    margin-top: 50px
+    justify-content: center
+  &-button
+    padding: 17px 35px
+    border: 2px solid $purple-color
+      radius: 100px
+    background-color: transparent
+    color: $purple-color
+
+
+.editions
+  margin-top: 80px
+  width: 100%
+  height: 766px
+  background: url(../img/editions.jpg)
+
+.project
+  margin-top: 80px
+  &-title
+    font:
+      weight: 400
+      size: 48px
+  &-description
+    margin-top: 30px
+    width: 1080px
+    font:
+      weight: 500
+      size: 16px
+    line-height: 32px
+    &-href:hover
+      color: $purple-color-hover
+      text-decoration: underline
+  &-partners
+    margin-top: 30px
+    font:
+      weight: 600
+      size: 24px
+
+.project-gallery 
+  margin-top: 30px
+  &-list
+    width: 1450px
+    margin-left: auto
+    margin-right: auto
+  &-item
+    width: 450px
+    height: 150px
+
+
+.slick-next, .slick-prev
+  width: 30px
+  height: 30px
+  color: $black-color
+  background: #ECECEC
+  border-radius: 50%
+
+.slick-prev:hover, .slick-prev:focus, .slick-next:hover, .slick-next:focus
+    color: $black-color
+    outline: none
+    background: #ECECEC
+
+.slick-prev
+  left: -60px
+
+.slick-prev:before, .slick-next:before 
+  color: $black-color
+
+.slick-prev:before 
+  content: '<'
+
+.slick-next:before 
+  content: '>'
+
+
+
+.contacts
+  margin-top: 80px
+  &-list
+    display: flex
+    margin-top: 30px
+    padding-left: 159px
+    border: 1px solid $grey-color
+  &-title
+    font:
+      weight: normal
+      size: 48px
+  &-link
+    width: 541px
+    &-title
+      margin-top: 124px
+      font:
+        weight: 600
+        size: 24px
+    &-description
+      margin-top: 18px
+      font:
+        weight: 500
+        size: 16px
+  &-form
+    display: flex
+    flex-direction: column
+    margin-top: 19px
+    &-title
+      margin:
+        top: 36px
+        bottom: 0
+      font:
+        weight: 400
+        size: 24px
+    &-field
+      margin-bottom: 23px
+      padding:
+        left: 24px
+      width: 400px
+      height: 40px
+      border: 1px solid $black-color
+        radius: 100px
+    &-button
+      padding: 17px 35px
+      background: transparent
+      border: 2px solid $purple-color
+        radius: 100px
+  &-touch
+    &-title
+      margin:
+        top: 38px
+        bottom: 18px
+      font:
+        weight: 500
+        size: 24px
+    &-href
+      margin:
+        right: 20px
+  
+
+.map-yandex
+  width: 100%
+  height: 700px
+  filter: grayscale(1)
+
+.footer
+  background: $black-footer-color
+  &-content
+    display: flex
+    padding:
+      top: 50px
+      bottom: 50px
+    justify-content: space-between
+  &-ico
+    display: flex
+    &-link:not(:last-child)
+      margin-right: 19px

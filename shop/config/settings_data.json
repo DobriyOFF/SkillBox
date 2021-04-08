@@ -1,0 +1,42 @@
+{
+  "common_js_version": "v2",
+  "current": "custom",
+  "presets": {
+    "custom": {
+      "color_background_primary": "#fbf3d4",
+      "color_text_primary": "#333333",
+      "color_link_primary": "#514a4a",
+      "color_link_primary_hover": "#2c52c3",
+      "color_border_primary": "#110f0f",
+      "color_background_secondary": "#ffa77a",
+      "color_text_secondary": "#310a0a",
+      "color_link_secondary": "#ffffff",
+      "color_link_secondary_hover": "#383838",
+      "color_border_secondary": "#150303",
+      "body_background_color": "#43dae8",
+      "body_background_type": "default",
+      "font_family_primary": "google:Istok+Web",
+      "font_size_primary": "16px",
+      "logotype_type": "text",
+      "logotype_font_family": "google:Cuprum",
+      "logotype_font_size": "40px",
+      "phone": "from_settings",
+      "email": "from_settings",
+      "vk": "https://www.vk.com",
+      "twitter": "https://www.twitter.com",
+      "facebook": "https://www.fb.com",
+      "instagram": "https://www.instagram.com",
+      "odnoklassniki": "https://www.ok.ru",
+      "youtube": "https://www.youtube.com",
+      "promo_slider_auto": "1",
+      "promo_slider_auto_time": "",
+      "cards_crop_off": "1",
+      "category_description_position": "before_products",
+      "product_not_available": "shown",
+      "_settings_version": 1607807416.0777466
+    }
+  },
+  "remote_theme_id": 410,
+  "source_account_id": null,
+  "theme_title": "Фантазия 2.0"
+}
